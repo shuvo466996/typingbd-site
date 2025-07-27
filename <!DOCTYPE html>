@@ -1,0 +1,60 @@
+money by typing from home.'",
+      "Type this sentence exactly: 'Complete tasks quickly and accurately.'",
+      "Type this sentence exactly: 'Verification unlocks more jobs.'",
+      "Type this sentence exactly: 'Premium members earn faster.'",
+      "Type this sentence exactly: 'Stay consistent to earn daily.'",
+      "Type this sentence exactly: 'Contact support for any help.'",
+      "Type this sentence exactly: 'Complete all tasks to proceed.'",
+      "Type this sentence exactly: 'TypingBD offers flexible work hours.'",
+      "Type this sentence exactly: 'Thank you for choosing TypingBD.'"
+    ];
+
+    const paid100Btn = document.getElementById('paid100Btn');
+    const taskList = document.getElementById('taskList');
+    const submitTasksBtn = document.getElementById('submitTasksBtn');
+    const step1 = document.getElementById('step1');
+    const paid990Btn = document.getElementById('paid990Btn');
+    const step2 = document.getElementById('step2');
+    const paid3000Btn = document.getElementById('paid3000Btn');
+    const step3 = document.getElementById('step3');
+    const finalMsg = document.getElementById('finalMsg');
+
+    paid100Btn.addEventListener('click', () => {
+      paid100Btn.disabled = true;
+      paid100Btn.textContent = "âœ… Payment Confirmed";
+      taskList.innerHTML = '';
+      tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task;
+        taskList.appendChild(li);
+      });
+      taskList.classList.remove('hidden');
+      submitTasksBtn.classList.remove('hidden');
+    });
+
+    submitTasksBtn.addEventListener('click', () => {
+      alert("Tasks submitted successfully!");
+      step1.classList.add('hidden');
+      step2.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    });
+
+    paid990Btn.addEventListener('click', () => {
+      paid990Btn.disabled = true;
+      paid990Btn.textContent = "âœ… Verified";
+      step2.classList.add('hidden');
+      step3.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    });
+
+    paid3000Btn.addEventListener('click', () => {
+      paid3000Btn.disabled = true;
+      paid3000Btn.textContent = "âœ… Premium Activated";
+      step3.classList.add('hidden');
+      finalMsg.classList.remove('hidden');
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>
